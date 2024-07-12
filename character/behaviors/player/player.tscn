@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cby5pq5kf2xpj"]
+
+[ext_resource type="Script" path="res://scripts/state_machine/state_machine.gd" id="1_3oc2c"]
+[ext_resource type="Script" path="res://character/behaviors/player/states/idle.gd" id="2_oibmp"]
+[ext_resource type="Script" path="res://character/behaviors/player/states/move.gd" id="3_458sd"]
+
+[node name="Player" type="Node" node_paths=PackedStringArray("initial_state")]
+script = ExtResource("1_3oc2c")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="."]
+script = ExtResource("2_oibmp")
+
+[node name="Move" type="Node" parent="."]
+script = ExtResource("3_458sd")
