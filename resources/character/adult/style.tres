@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="AdultStyle" load_steps=3 format=3 uid="uid://datntj1yhxu4e"]
+
+[ext_resource type="SpriteFrames" uid="uid://cecy21eruicsy" path="res://resources/character/adult/bodies/adult_body_light.tres" id="1_3o3dd"]
+[ext_resource type="Script" path="res://character/adult/style.gd" id="2_1ind8"]
+
+[resource]
+script = ExtResource("2_1ind8")
+bodies = Array[SpriteFrames]([ExtResource("1_3o3dd")])

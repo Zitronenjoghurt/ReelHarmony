@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtm57gnjfoxl"]
+
+[ext_resource type="Script" path="res://character/adult/adult.gd" id="1_map7e"]
+[ext_resource type="Script" path="res://character/style/style.gd" id="2_wmrqf"]
+
+[node name="Adult" type="CharacterBody2D"]
+script = ExtResource("1_map7e")
+
+[node name="Style" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_wmrqf")
