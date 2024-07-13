@@ -26,3 +26,13 @@ func get_input_direction_v() -> int:
 		return -1
 	
 	return 0
+
+func get_facing_direction_name(facing_direction: Character.FacingDirection) -> String:
+	match facing_direction:
+		Character.FacingDirection.LEFT:
+			return "left"
+		Character.FacingDirection.RIGHT:
+			return "right"
+		Character.FacingDirection.UP:
+			return "up"
+	return "down"

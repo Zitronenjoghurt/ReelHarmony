@@ -1,0 +1,81 @@
+[gd_resource type="Resource" script_class="DynamicSpriteFrames" load_steps=19 format=3 uid="uid://nmds0sjbryc8"]
+
+[ext_resource type="Script" path="res://character/style/dynamic_sprite_frames_animation.gd" id="1_wsbdt"]
+[ext_resource type="Texture2D" uid="uid://bu5e64apv6bih" path="res://assets/character/adult/idle/clothes/chest/shirt_solids/character_idle_clothes_chest_colored_shirt_blue_dark.png" id="2_vyhwt"]
+[ext_resource type="Texture2D" uid="uid://cnwyj5ovl2lcu" path="res://assets/character/adult/jump/clothes/chest/shirt_solid/character_jump_clothes_chest_colored_shirt_blue_dark.png" id="3_aryqd"]
+[ext_resource type="Texture2D" uid="uid://cql8r1kvkbhyx" path="res://assets/character/adult/run/clothes/chest/shirt_solid/character_run_clothes_chest_colored_shirt_blue_dark.png" id="4_f78k6"]
+[ext_resource type="Texture2D" uid="uid://di34k3dnv67ip" path="res://assets/character/adult/walk/clothes/chest/solid_shirts/character_walk_clothes_chest_colored_shirt_blue_dark.png" id="5_y0jcq"]
+[ext_resource type="Texture2D" uid="uid://df7midmrorkqb" path="res://assets/character/adult/tool_fishing_rod_catch/clothes/chest/shirt/solid/character_fishing_rod_clothes_shirt_solid_blue.png" id="6_w3fxf"]
+[ext_resource type="Texture2D" uid="uid://q6x3d4qvdu06" path="res://assets/character/adult/tool_fishing_rod_pull/clothes/chest/shirt/solid/character_fishing_rod_pull_clothes_shirt_solid_blue.png" id="7_4a5o6"]
+[ext_resource type="Texture2D" uid="uid://cmitgrg3dws24" path="res://assets/character/adult/tool_fishing_rod_reel/clothes/chest/shirt/solid/character_fishing_rod_clothes_shirt_solid_blue.png" id="8_e4vli"]
+[ext_resource type="Texture2D" uid="uid://cwkdkymbogxkq" path="res://assets/character/adult/tool_fishing_rod_throw/clothes/chest/shirt/solid/character_fishing_rod_clothes_shirt_solid_blue.png" id="9_i8yfm"]
+[ext_resource type="Script" path="res://character/style/dynamic_sprite_frames.gd" id="10_y8evh"]
+
+[sub_resource type="Resource" id="Resource_biffu"]
+script = ExtResource("1_wsbdt")
+name = "idle"
+sheet = ExtResource("2_vyhwt")
+loops = true
+fps = 5.0
+frame_count = 2
+
+[sub_resource type="Resource" id="Resource_5pc82"]
+script = ExtResource("1_wsbdt")
+name = "jump"
+sheet = ExtResource("3_aryqd")
+loops = false
+fps = 10.0
+frame_count = 6
+
+[sub_resource type="Resource" id="Resource_gloq7"]
+script = ExtResource("1_wsbdt")
+name = "run"
+sheet = ExtResource("4_f78k6")
+loops = true
+fps = 7.0
+frame_count = 4
+
+[sub_resource type="Resource" id="Resource_pscwu"]
+script = ExtResource("1_wsbdt")
+name = "walk"
+sheet = ExtResource("5_y0jcq")
+loops = true
+fps = 7.0
+frame_count = 6
+
+[sub_resource type="Resource" id="Resource_v35lg"]
+script = ExtResource("1_wsbdt")
+name = "rod_catch"
+sheet = ExtResource("6_w3fxf")
+loops = false
+fps = 7.0
+frame_count = 5
+
+[sub_resource type="Resource" id="Resource_sh5ht"]
+script = ExtResource("1_wsbdt")
+name = "rod_pull"
+sheet = ExtResource("7_4a5o6")
+loops = false
+fps = 7.0
+frame_count = 8
+
+[sub_resource type="Resource" id="Resource_3m2pr"]
+script = ExtResource("1_wsbdt")
+name = "rod_reel"
+sheet = ExtResource("8_e4vli")
+loops = true
+fps = 10.0
+frame_count = 4
+
+[sub_resource type="Resource" id="Resource_juqay"]
+script = ExtResource("1_wsbdt")
+name = "rod_throw"
+sheet = ExtResource("9_i8yfm")
+loops = false
+fps = 7.0
+frame_count = 7
+
+[resource]
+script = ExtResource("10_y8evh")
+cell_size = Vector2(64, 64)
+animations = Array[ExtResource("1_wsbdt")]([SubResource("Resource_biffu"), SubResource("Resource_5pc82"), SubResource("Resource_gloq7"), SubResource("Resource_pscwu"), SubResource("Resource_v35lg"), SubResource("Resource_sh5ht"), SubResource("Resource_3m2pr"), SubResource("Resource_juqay")])

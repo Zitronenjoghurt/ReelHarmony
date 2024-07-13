@@ -12,20 +12,22 @@ enum Shirt {
 	NONE
 }
 
-@export var bodies: Array[SpriteFrames] = []
-@export var shirts: Array[SpriteFrames] = []
+@export var bodies: Array[DynamicSpriteFrames] = []
+@export var shirts: Array[DynamicSpriteFrames] = []
 
 func build_sprites(body: Body, shirt: Shirt) -> Array[AnimatedSprite2D]:
 	var sprites: Array[AnimatedSprite2D] = []
 	
-	if body < len(bodies):
-		var body_sprite = AnimatedSprite2D.new()
-		body_sprite.sprite_frames = bodies[body]
-		sprites.append(body_sprite)
-	
-	if shirt < len(shirts):
-		var shirt_sprite = AnimatedSprite2D.new()
-		shirt_sprite.sprite_frames = shirts[shirt]
-		sprites.append(shirt_sprite)
+	push_sprite(sprites, bodies, body)
+	push_sprite(sprites, shirts, shirt)
 	
 	return sprites
+
+func push_sprite(sprites: Array[AnimatedSprite2D], frames: Array[DynamicSpriteFrames], index: int):
+	if index >= len(frames):
+		return
+	
+	var sprite = AnimatedSprite2D.new()
+	var sprite_frames = frames[index].build_sprite_frames()
+	sprite.sprite_frames = sprite_frames
+	sprites.append(sprite)

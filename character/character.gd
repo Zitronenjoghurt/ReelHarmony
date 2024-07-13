@@ -6,10 +6,10 @@ extends CharacterBody2D
 @onready var style: CharacterStyle = %Style
 
 enum FacingDirection {
-	LEFT,
 	RIGHT,
-	UP,
-	DOWN
+	LEFT,
+	DOWN,
+	UP
 }
 
 var current_facing_direction: FacingDirection = FacingDirection.DOWN
@@ -44,13 +44,3 @@ func update_facing_direction(direction_h: int, direction_v: int):
 		current_facing_direction = FacingDirection.UP
 	elif direction_v > 0:
 		current_facing_direction = FacingDirection.DOWN
-
-func get_facing_direction_name(facing_direction: FacingDirection) -> String:
-	match facing_direction:
-		FacingDirection.LEFT:
-			return "left"
-		FacingDirection.RIGHT:
-			return "right"
-		FacingDirection.UP:
-			return "up"
-	return "down"

@@ -16,7 +16,7 @@ func play_animation(animation: Animations):
 	style.play_animation(get_animation(animation, current_facing_direction))
 
 func get_animation(animation: Animations, facing_direction: FacingDirection) -> String:
-	return get_animation_name(animation) + "_" + get_facing_direction_name(facing_direction)
+	return get_animation_name(animation) + "_" + Utils.get_facing_direction_name(facing_direction)
 
 func get_animation_name(animation: Animations) -> String:
 	match animation:
