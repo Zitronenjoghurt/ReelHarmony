@@ -1,8 +1,11 @@
-[gd_resource type="Resource" script_class="AdultStyle" load_steps=3 format=3 uid="uid://datntj1yhxu4e"]
+[gd_resource type="Resource" script_class="AdultStyle" load_steps=5 format=3 uid="uid://datntj1yhxu4e"]
 
 [ext_resource type="SpriteFrames" uid="uid://cecy21eruicsy" path="res://resources/character/adult/bodies/adult_body_light.tres" id="1_3o3dd"]
 [ext_resource type="Script" path="res://character/types/adult/style.gd" id="2_1ind8"]
+[ext_resource type="SpriteFrames" uid="uid://d0hrp12d8g7ey" path="res://resources/character/adult/shirts/adult_shirt_dark_blue.tres" id="3_l1cgk"]
+[ext_resource type="SpriteFrames" uid="uid://di542dfpu5lcs" path="res://resources/character/adult/shirts/adult_shirt_light_blue.tres" id="4_vkn22"]
 
 [resource]
 script = ExtResource("2_1ind8")
 bodies = Array[SpriteFrames]([ExtResource("1_3o3dd")])
+shirts = Array[SpriteFrames]([ExtResource("3_l1cgk"), ExtResource("4_vkn22")])

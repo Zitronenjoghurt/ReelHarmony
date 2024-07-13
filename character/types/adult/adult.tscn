@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtm57gnjfoxl"]
+[gd_scene load_steps=4 format=3 uid="uid://dtm57gnjfoxl"]
 
 [ext_resource type="Script" path="res://character/types/adult/adult.gd" id="1_map7e"]
 [ext_resource type="Script" path="res://character/style/style.gd" id="2_wmrqf"]
-[ext_resource type="SpriteFrames" uid="uid://cecy21eruicsy" path="res://resources/character/adult/bodies/adult_body_light.tres" id="3_d4dkt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k4mae"]
 radius = 3.0
@@ -17,10 +16,6 @@ z_index = 1
 y_sort_enabled = true
 position = Vector2(0.5, -7)
 script = ExtResource("2_wmrqf")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Style"]
-sprite_frames = ExtResource("3_d4dkt")
-animation = &"idle_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)
