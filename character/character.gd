@@ -2,7 +2,6 @@ class_name Character
 extends CharacterBody2D
 
 @export var config: CharacterConfig
-@export var style_config: CharacterStyleConfig
 
 @onready var style: CharacterStyle = %Style
 
@@ -22,9 +21,9 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func _load_style():
-	if not style_config is CharacterStyleConfig:
+	if not config.STYLE is CharacterStyleConfig:
 		return
-	style.build(style_config)
+	style.build(config.STYLE)
 
 func move(direction_h: int, direction_v: int, speed_multiplier: float = 1.0):
 	if direction_h != 0 and direction_v != 0:
