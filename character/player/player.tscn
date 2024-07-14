@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://cby5pq5kf2xpj"]
+
+[ext_resource type="Script" path="res://scripts/state_machine/state_machine.gd" id="1_3oc2c"]
+[ext_resource type="Script" path="res://character/player/player.gd" id="1_t6k0w"]
+[ext_resource type="PackedScene" uid="uid://bk11ss0ddq88n" path="res://fishing/bobber/bobber.tscn" id="2_mx3pw"]
+[ext_resource type="Script" path="res://character/player/states/idle.gd" id="2_oibmp"]
+[ext_resource type="Script" path="res://character/style/style.gd" id="2_s6k3c"]
+[ext_resource type="Script" path="res://character/player/states/move.gd" id="3_458sd"]
+[ext_resource type="Script" path="res://character/player/states/rod_throw.gd" id="4_61kot"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3nkgp"]
+radius = 3.0
+height = 10.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_t6k0w")
+bobber_scene = ExtResource("2_mx3pw")
+
+[node name="Style" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_s6k3c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_3nkgp")
+
+[node name="FSM" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("1_3oc2c")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="FSM" node_paths=PackedStringArray("player")]
+script = ExtResource("2_oibmp")
+player = NodePath("../..")
+
+[node name="Move" type="Node" parent="FSM" node_paths=PackedStringArray("player")]
+script = ExtResource("3_458sd")
+player = NodePath("../..")
+
+[node name="RodThrow" type="Node" parent="FSM" node_paths=PackedStringArray("player")]
+script = ExtResource("4_61kot")
+player = NodePath("../..")
