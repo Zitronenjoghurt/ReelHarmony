@@ -10,7 +10,7 @@ func build_sprite_frames(sprite_frames: SpriteFrames, name_suffix: String = "") 
 	
 	return sprite_frames
 
-func build_animation_frames(sprite_frames: SpriteFrames, animation: DynamicSpriteFramesAnimation, name_suffix: String) -> void:
+func build_animation_frames(sprite_frames: SpriteFrames, animation: DynamicSpriteFramesAnimation, name_suffix: String, y_coord_offset: int = 0) -> void:
 	for direction: int in range(4):
 		var animation_name: String = animation.name + "_" + Utils.get_facing_direction_name(direction) + name_suffix
 		sprite_frames.add_animation(animation_name)
@@ -18,7 +18,7 @@ func build_animation_frames(sprite_frames: SpriteFrames, animation: DynamicSprit
 		sprite_frames.set_animation_speed(animation_name, animation.fps)
 		
 		for frame_index: int in range(animation.frame_count):
-			var coords: Vector2 = Vector2(frame_index, direction)
+			var coords: Vector2 = Vector2(frame_index, direction + y_coord_offset)
 			var texture: AtlasTexture = create_atlas_texture(coords, animation.sheet)
 			sprite_frames.add_frame(animation_name, texture)
 

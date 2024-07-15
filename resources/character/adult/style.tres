@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="AdultStyle" load_steps=4 format=3 uid="uid://dfhf3x66mm6sh"]
+[gd_resource type="Resource" script_class="AdultStyle" load_steps=5 format=3 uid="uid://dfhf3x66mm6sh"]
 
 [ext_resource type="Resource" uid="uid://snokjpxj3n7p" path="res://resources/character/adult/bodies/body_light.tres" id="1_1tnrt"]
+[ext_resource type="Resource" uid="uid://dn7hp8gtqhlsf" path="res://resources/character/adult/hairstyles/big_bun.tres" id="2_0k2kq"]
 [ext_resource type="Script" path="res://character/types/adult/style.gd" id="2_1ind8"]
 [ext_resource type="Resource" uid="uid://nmds0sjbryc8" path="res://resources/character/adult/shirts/shirt_dark_blue.tres" id="3_4duh5"]
 
@@ -8,3 +9,4 @@
 script = ExtResource("2_1ind8")
 bodies = Array[Resource("res://character/style/dynamic_sprite_frames.gd")]([ExtResource("1_1tnrt")])
 shirts = Array[Resource("res://character/style/dynamic_sprite_frames.gd")]([ExtResource("3_4duh5")])
+hairstyles = Array[Resource("res://character/style/dynamic_hair_style.gd")]([ExtResource("2_0k2kq")])

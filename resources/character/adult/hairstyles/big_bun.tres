@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="DynamicHairStyle" load_steps=13 format=3 uid="uid://dn7hp8gtqhlsf"]
+
+[ext_resource type="Script" path="res://character/style/dynamic_sprite_frames_animation.gd" id="1_5yreb"]
+[ext_resource type="Script" path="res://character/style/dynamic_hair_style.gd" id="1_ag3b7"]
+[ext_resource type="Texture2D" uid="uid://dlv1pkeeslave" path="res://assets/character/adult/idle/hairstyles/big_bun/character_idle_hairstyles_big_bun_all.png" id="2_va6jo"]
+[ext_resource type="Texture2D" uid="uid://bp2qhr0k73s52" path="res://assets/character/adult/jump/hairstyles/big_bun/character_jump_hairstyles_big_bun_all.png" id="3_iyqsk"]
+[ext_resource type="Texture2D" uid="uid://dja01utfwtryw" path="res://assets/character/adult/run/hairstyles/big_bun/character_run_hairstyles_big_bun_all.png" id="4_jnp50"]
+[ext_resource type="Texture2D" uid="uid://doj1gsualqeju" path="res://assets/character/adult/walk/hairstyles/big_bun/character_walk_hairstyles_big_bun_all.png" id="5_h7ava"]
+[ext_resource type="Texture2D" uid="uid://biaqevhyhahd6" path="res://assets/character/adult/tool_fishing_rod_throw/hairstyles/big_bun/character_tools_fishing_rod_hairstyles_big_bun_all.png" id="6_0wrb1"]
+
+[sub_resource type="Resource" id="Resource_r61gf"]
+script = ExtResource("1_5yreb")
+name = "idle"
+sheet = ExtResource("2_va6jo")
+loops = true
+fps = 5.0
+frame_count = 2
+
+[sub_resource type="Resource" id="Resource_cwnco"]
+script = ExtResource("1_5yreb")
+name = "jump"
+sheet = ExtResource("3_iyqsk")
+loops = false
+fps = 10.0
+frame_count = 6
+
+[sub_resource type="Resource" id="Resource_2wr8b"]
+script = ExtResource("1_5yreb")
+name = "run"
+sheet = ExtResource("4_jnp50")
+loops = true
+fps = 7.0
+frame_count = 4
+
+[sub_resource type="Resource" id="Resource_j4h2k"]
+script = ExtResource("1_5yreb")
+name = "walk"
+sheet = ExtResource("5_h7ava")
+loops = true
+fps = 7.0
+frame_count = 6
+
+[sub_resource type="Resource" id="Resource_svq0o"]
+script = ExtResource("1_5yreb")
+name = "rod_throw"
+sheet = ExtResource("6_0wrb1")
+loops = false
+fps = 7.0
+frame_count = 7
+
+[resource]
+script = ExtResource("1_ag3b7")
+cell_size = Vector2(64, 64)
+animations = Array[ExtResource("1_5yreb")]([SubResource("Resource_r61gf"), SubResource("Resource_cwnco"), SubResource("Resource_2wr8b"), SubResource("Resource_j4h2k"), SubResource("Resource_svq0o")])
