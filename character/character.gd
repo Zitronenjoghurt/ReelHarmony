@@ -24,6 +24,9 @@ func _load_style() -> void:
 	if not config.STYLE is CharacterStyleConfig:
 		return
 	style.build(config.STYLE)
+	
+func update_style() -> void:
+	style.update(config.STYLE)
 
 func move(direction_h: int, direction_v: int, speed_multiplier: float = 1.0) -> void:
 	if direction_h != 0 and direction_v != 0:

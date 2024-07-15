@@ -14,5 +14,5 @@ func update(_delta: float) -> void:
 		return
 	
 	if Input.is_action_pressed("Throw_Rod"):
-		transition_state.emit(self, "rodthrow")
+		transition_state.emit(self, "throwcharge")
 		return

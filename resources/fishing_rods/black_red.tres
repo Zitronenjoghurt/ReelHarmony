@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="DynamicSpriteFrames" load_steps=11 format=3 uid="uid://cc33vvvhw1jqt"]
+
+[ext_resource type="Script" path="res://character/style/dynamic_sprite_frames_animation.gd" id="1_wyqqw"]
+[ext_resource type="Texture2D" uid="uid://bmnmfhuhkxhlf" path="res://assets/character/adult/tool_fishing_rod_catch/fishing_rods/character_fishing_rod_black_red.png" id="2_dirgc"]
+[ext_resource type="Texture2D" uid="uid://rsbpv4svch3q" path="res://assets/character/adult/tool_fishing_rod_pull/fishing_rods/character_tools_fishing_rod_pull_rod_black_red.png" id="3_8lra2"]
+[ext_resource type="Texture2D" uid="uid://0f3adn3j175v" path="res://assets/character/adult/tool_fishing_rod_reel/fishing_rods/character_tools_fishing_rod_reel_rod_black_red.png" id="4_8e4lp"]
+[ext_resource type="Texture2D" uid="uid://k8uxglspecv3" path="res://assets/character/adult/tool_fishing_rod_throw/fishing_rods/character_tools_fishing_rod_throw_rod_black_red.png" id="5_wrhdk"]
+[ext_resource type="Script" path="res://character/style/dynamic_sprite_frames.gd" id="6_rkf2f"]
+
+[sub_resource type="Resource" id="Resource_xu0fm"]
+script = ExtResource("1_wyqqw")
+name = "catch"
+sheet = ExtResource("2_dirgc")
+loops = false
+fps = 7.0
+frame_count = 5
+
+[sub_resource type="Resource" id="Resource_r6067"]
+script = ExtResource("1_wyqqw")
+name = "pull"
+sheet = ExtResource("3_8lra2")
+loops = false
+fps = 7.0
+frame_count = 8
+
+[sub_resource type="Resource" id="Resource_miugr"]
+script = ExtResource("1_wyqqw")
+name = "reel"
+sheet = ExtResource("4_8e4lp")
+loops = true
+fps = 10.0
+frame_count = 4
+
+[sub_resource type="Resource" id="Resource_xvoa2"]
+script = ExtResource("1_wyqqw")
+name = "throw"
+sheet = ExtResource("5_wrhdk")
+loops = false
+fps = 7.0
+frame_count = 7
+
+[resource]
+script = ExtResource("6_rkf2f")
+cell_size = Vector2(64, 64)
+animations = Array[ExtResource("1_wyqqw")]([SubResource("Resource_xu0fm"), SubResource("Resource_r6067"), SubResource("Resource_miugr"), SubResource("Resource_xvoa2")])

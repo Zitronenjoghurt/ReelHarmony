@@ -4,17 +4,15 @@ extends Resource
 @export var cell_size: Vector2 = Vector2(64, 64)
 @export var animations: Array[DynamicSpriteFramesAnimation] = []
 
-func build_sprite_frames() -> SpriteFrames:
-	var sprite_frames: SpriteFrames = SpriteFrames.new()
-	
+func build_sprite_frames(sprite_frames: SpriteFrames, name_suffix: String = "") -> SpriteFrames:	
 	for animation: DynamicSpriteFramesAnimation in animations:
-		build_animation_frames(sprite_frames, animation)
+		build_animation_frames(sprite_frames, animation, name_suffix)
 	
 	return sprite_frames
 
-func build_animation_frames(sprite_frames: SpriteFrames, animation: DynamicSpriteFramesAnimation) -> void:
+func build_animation_frames(sprite_frames: SpriteFrames, animation: DynamicSpriteFramesAnimation, name_suffix: String) -> void:
 	for direction: int in range(4):
-		var animation_name: String = animation.name + "_" + Utils.get_facing_direction_name(direction)
+		var animation_name: String = animation.name + "_" + Utils.get_facing_direction_name(direction) + name_suffix
 		sprite_frames.add_animation(animation_name)
 		sprite_frames.set_animation_loop(animation_name, animation.loops)
 		sprite_frames.set_animation_speed(animation_name, animation.fps)

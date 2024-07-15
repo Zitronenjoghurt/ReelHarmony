@@ -28,6 +28,7 @@ func push_sprite(sprites: Array[AnimatedSprite2D], frames: Array[DynamicSpriteFr
 		return
 	
 	var sprite: AnimatedSprite2D = AnimatedSprite2D.new()
-	var sprite_frames: SpriteFrames = frames[index].build_sprite_frames()
+	var sprite_frames: SpriteFrames = SpriteFrames.new() 
+	frames[index].build_sprite_frames(sprite_frames)
 	sprite.sprite_frames = sprite_frames
 	sprites.append(sprite)

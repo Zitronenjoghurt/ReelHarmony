@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://db5pvdqvfp7oc"]
+
+[ext_resource type="Texture2D" uid="uid://d25ohh55g0js6" path="res://assets/ui/bars.png" id="1_sheie"]
+[ext_resource type="Script" path="res://ui/scripts/rod_throw_bar.gd" id="2_1orpu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlbqq"]
+atlas = ExtResource("1_sheie")
+region = Rect2(8, 169, 24, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bikau"]
+atlas = ExtResource("1_sheie")
+region = Rect2(170, 267, 20, 2)
+
+[node name="RodThrowBar" type="TextureProgressBar"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -3.5
+offset_right = 12.0
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.0
+step = 0.01
+texture_under = SubResource("AtlasTexture_nlbqq")
+texture_progress = SubResource("AtlasTexture_bikau")
+texture_progress_offset = Vector2(2, 2)
+script = ExtResource("2_1orpu")

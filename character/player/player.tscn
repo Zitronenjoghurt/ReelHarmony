@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cby5pq5kf2xpj"]
+[gd_scene load_steps=12 format=3 uid="uid://cby5pq5kf2xpj"]
 
 [ext_resource type="Script" path="res://scripts/state_machine/state_machine.gd" id="1_3oc2c"]
 [ext_resource type="Script" path="res://character/player/player.gd" id="1_t6k0w"]
@@ -6,7 +6,10 @@
 [ext_resource type="Script" path="res://character/player/states/idle.gd" id="2_oibmp"]
 [ext_resource type="Script" path="res://character/style/style.gd" id="2_s6k3c"]
 [ext_resource type="Script" path="res://character/player/states/move.gd" id="3_458sd"]
-[ext_resource type="Script" path="res://character/player/states/rod_throw.gd" id="4_61kot"]
+[ext_resource type="PackedScene" uid="uid://ctrt7exbnnndo" path="res://fishing/rod/fishing_rod.tscn" id="4_rdbv6"]
+[ext_resource type="Script" path="res://character/player/states/throw_charge.gd" id="8_5ct1l"]
+[ext_resource type="PackedScene" uid="uid://db5pvdqvfp7oc" path="res://ui/scenes/rod_throw_bar.tscn" id="8_dyw67"]
+[ext_resource type="Script" path="res://character/player/states/throw.gd" id="9_fknwx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3nkgp"]
 radius = 3.0
@@ -21,7 +24,13 @@ unique_name_in_owner = true
 position = Vector2(0, -7)
 script = ExtResource("2_s6k3c")
 
+[node name="FishingRod" parent="." instance=ExtResource("4_rdbv6")]
+unique_name_in_owner = true
+visible = false
+position = Vector2(0, -7)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -2)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_3nkgp")
@@ -38,6 +47,19 @@ player = NodePath("../..")
 script = ExtResource("3_458sd")
 player = NodePath("../..")
 
-[node name="RodThrow" type="Node" parent="FSM" node_paths=PackedStringArray("player")]
-script = ExtResource("4_61kot")
+[node name="ThrowCharge" type="Node" parent="FSM" node_paths=PackedStringArray("player")]
+script = ExtResource("8_5ct1l")
 player = NodePath("../..")
+
+[node name="Throw" type="Node" parent="FSM" node_paths=PackedStringArray("player")]
+script = ExtResource("9_fknwx")
+player = NodePath("../..")
+
+[node name="RodThrowBar" parent="." instance=ExtResource("8_dyw67")]
+unique_name_in_owner = true
+visible = false
+offset_left = -24.0
+offset_top = -30.5
+offset_right = 0.0
+offset_bottom = -23.5
+scale = Vector2(2, 2)

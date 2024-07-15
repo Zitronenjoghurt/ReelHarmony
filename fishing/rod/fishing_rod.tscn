@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctrt7exbnnndo"]
+
+[ext_resource type="Script" path="res://fishing/rod/fishing_rod.gd" id="1_bxac0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qof1b"]
+animations = []
+
+[node name="FishingRod" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_qof1b")
+animation = &""
+script = ExtResource("1_bxac0")
