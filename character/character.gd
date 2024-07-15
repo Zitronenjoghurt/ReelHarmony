@@ -47,3 +47,15 @@ func update_facing_direction(direction_h: int, direction_v: int) -> void:
 		current_facing_direction = FacingDirection.UP
 	elif direction_v > 0:
 		current_facing_direction = FacingDirection.DOWN
+
+func get_facing_direction_vector() -> Vector2i:
+	match current_facing_direction:
+		FacingDirection.RIGHT:
+			return Vector2i(1, 0)
+		FacingDirection.LEFT:
+			return Vector2i(-1, 0)
+		FacingDirection.UP:
+			return Vector2i(0, -1)
+		FacingDirection.DOWN:
+			return Vector2i(0, 1)
+	return Vector2i.ZERO
