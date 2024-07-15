@@ -15,11 +15,11 @@ enum Animations {
 @export var bobber_color: BobberColor = BobberColor.RED
 @onready var sprite: AnimatedSprite2D = %Sprite
 
-func _ready():
+func _ready() -> void:
 	play_animation(Animations.FLOAT)
 
-func play_animation(animation: Animations):
-	var animation_name = get_animation_name(animation) + "_" + get_color_name(bobber_color)
+func play_animation(animation: Animations) -> void:
+	var animation_name: String = get_animation_name(animation) + "_" + get_color_name(bobber_color)
 	sprite.play(animation_name)
 
 func get_color_name(color: BobberColor) -> String:

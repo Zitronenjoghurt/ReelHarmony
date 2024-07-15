@@ -3,10 +3,10 @@ extends State
 
 @export var player: Player
 
-func enter():
+func enter() -> void:
 	player.velocity = Vector2.ZERO
 
-func update(delta: float):
+func update(_delta: float) -> void:
 	player.play_animation(player.Animations.IDLE)
 	
 	if Utils.is_direction_key_pressed():

@@ -5,7 +5,7 @@ extends Resource
 @export var player_stats: PlayerStats = PlayerStats.new()
 
 static func create_new(file_index: int) -> SaveGame:
-	var save_game = SaveGame.new()
+	var save_game: SaveGame = SaveGame.new()
 	save_game.index = file_index
 	return save_game
 
@@ -18,9 +18,9 @@ static func save_file_exists(file_index: int) -> bool:
 static func load_save(file_index: int) -> SaveGame:
 	if not save_file_exists(file_index):
 		return SaveGame.create_new(file_index)
-	var path = get_save_path(file_index)
+	var path: String = get_save_path(file_index)
 	return load(path)
 
-func save():
-	var path = SaveGame.get_save_path(index)
+func save() -> void:
+	var path: String = SaveGame.get_save_path(index)
 	ResourceSaver.save(self, path)

@@ -5,8 +5,8 @@ extends Node
 var current_state: State
 var states: Dictionary = {}
 
-func _ready():
-	for child in get_children():
+func _ready() -> void:
+	for child: State in get_children():
 		if not child is State:
 			continue
 		if child.name in states:
@@ -18,7 +18,7 @@ func _ready():
 		initial_state.enter()
 		current_state = initial_state
 		
-func _on_state_transition(old_state: State, new_state: String):
+func _on_state_transition(old_state: State, new_state: String) -> void:
 	if old_state != current_state:
 		return
 
@@ -26,12 +26,12 @@ func _on_state_transition(old_state: State, new_state: String):
 		print("Invalid state: " + new_state)
 		return
 	
-	var transition_to_state: State = states[new_state.to_lower()] as State
+	var transition_to_state: State = states[new_state.to_lower()]
 	current_state = null
 	old_state.exit()
 	transition_to_state.enter()
 	current_state = transition_to_state
 
-func _physics_process(delta):
+func _physics_process(delta: float) -> void:
 	if current_state is State:
 		current_state.update(delta)

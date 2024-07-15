@@ -12,7 +12,7 @@ enum Animations {
 	ROD_THROW
 }
 
-func play_animation(animation: Animations):
+func play_animation(animation: Animations) -> void:
 	style.play_animation(get_animation(animation, current_facing_direction))
 
 func get_animation(animation: Animations, facing_direction: FacingDirection) -> String:

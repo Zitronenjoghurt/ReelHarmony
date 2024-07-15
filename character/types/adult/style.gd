@@ -23,11 +23,11 @@ func build_sprites(body: Body, shirt: Shirt) -> Array[AnimatedSprite2D]:
 	
 	return sprites
 
-func push_sprite(sprites: Array[AnimatedSprite2D], frames: Array[DynamicSpriteFrames], index: int):
+func push_sprite(sprites: Array[AnimatedSprite2D], frames: Array[DynamicSpriteFrames], index: int) -> void:
 	if index >= len(frames):
 		return
 	
-	var sprite = AnimatedSprite2D.new()
-	var sprite_frames = frames[index].build_sprite_frames()
+	var sprite: AnimatedSprite2D = AnimatedSprite2D.new()
+	var sprite_frames: SpriteFrames = frames[index].build_sprite_frames()
 	sprite.sprite_frames = sprite_frames
 	sprites.append(sprite)

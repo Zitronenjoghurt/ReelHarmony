@@ -5,27 +5,27 @@ extends Resource
 @export var animations: Array[DynamicSpriteFramesAnimation] = []
 
 func build_sprite_frames() -> SpriteFrames:
-	var sprite_frames = SpriteFrames.new()
+	var sprite_frames: SpriteFrames = SpriteFrames.new()
 	
-	for animation in animations:
+	for animation: DynamicSpriteFramesAnimation in animations:
 		build_animation_frames(sprite_frames, animation)
 	
 	return sprite_frames
 
-func build_animation_frames(sprite_frames: SpriteFrames, animation: DynamicSpriteFramesAnimation):
-	for direction in range(4):
-		var animation_name = animation.name + "_" + Utils.get_facing_direction_name(direction)
+func build_animation_frames(sprite_frames: SpriteFrames, animation: DynamicSpriteFramesAnimation) -> void:
+	for direction: int in range(4):
+		var animation_name: String = animation.name + "_" + Utils.get_facing_direction_name(direction)
 		sprite_frames.add_animation(animation_name)
 		sprite_frames.set_animation_loop(animation_name, animation.loops)
 		sprite_frames.set_animation_speed(animation_name, animation.fps)
 		
-		for frame_index in range(animation.frame_count):
-			var coords = Vector2(frame_index, direction)
-			var texture = create_atlas_texture(coords, animation.sheet)
+		for frame_index: int in range(animation.frame_count):
+			var coords: Vector2 = Vector2(frame_index, direction)
+			var texture: AtlasTexture = create_atlas_texture(coords, animation.sheet)
 			sprite_frames.add_frame(animation_name, texture)
 
 func create_atlas_texture(coords: Vector2, texture: CompressedTexture2D) -> AtlasTexture:
-	var atlas_texture = AtlasTexture.new()
+	var atlas_texture: AtlasTexture = AtlasTexture.new()
 	atlas_texture.atlas = texture
 	atlas_texture.region = Rect2(coords * cell_size, cell_size)
 	return atlas_texture

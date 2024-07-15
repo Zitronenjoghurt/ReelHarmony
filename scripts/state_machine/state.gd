@@ -3,11 +3,11 @@ extends Node
 
 signal transition_state(current_state: State, new_state: String)
 
-func enter():
+func enter() -> void:
 	pass
 	
-func update(delta: float):
+func update(_delta: float) -> void:
 	pass
 
-func exit():
+func exit() -> void:
 	pass
