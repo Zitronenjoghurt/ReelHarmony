@@ -18,6 +18,7 @@ bobber_scene = ExtResource("2_hj7o8")
 
 [node name="Style" type="Node2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(0, -7)
 script = ExtResource("2_s6k3c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
