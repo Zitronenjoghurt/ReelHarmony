@@ -6,6 +6,7 @@ extends Adult
 @onready var rod_throw_bar: RodThrowBar = %RodThrowBar
 @onready var fishing_rod: FishingRod = %FishingRod
 @onready var bobber_indicator: BobberIndicator = %BobberIndicator
+@onready var fishing_line: FishingLine = %FishingLine
 
 var current_rod_throw_strength: float = 0.0
 

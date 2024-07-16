@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0ral1whl2itc"]
+
+[ext_resource type="Script" path="res://fishing/line/fishing_line.gd" id="1_0yre7"]
+
+[node name="FishingLine" type="Line2D"]
+width = 1.0
+script = ExtResource("1_0yre7")

@@ -27,14 +27,13 @@ func display_failure() -> void:
 	modulate = Color(1, 1, 1, 0.5)
 	success = false
 
-func deactivate() -> Vector2:
+func deactivate() -> void:
 	bobber_area.monitoring = false
 	bobber_area.monitorable = false
 	hide()
+	global_position = initial_position
 	initial_position = Vector2.ZERO
 	current_location = null
-	
-	return global_position
 
 func _on_bobber_area_body_entered(body: Node2D) -> void:
 	if body is TileMap:
