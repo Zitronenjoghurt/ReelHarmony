@@ -52,4 +52,3 @@ func _update_bobber_indicator() -> void:
 	
 func exit() -> void:
 	player.rod_throw_bar.hide()
-	player.bobber_indicator.deactivate()
