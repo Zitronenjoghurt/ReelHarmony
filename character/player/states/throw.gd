@@ -19,6 +19,10 @@ func update(_delta: float) -> void:
 	if not was_success:
 		transition_state.emit(self, "idle")
 		return
+		
+	if player.style.get_current_frame() >= Config.ROD_THROW_ANIMATION_END_FRAME_INDEX:
+		transition_state.emit(self, "fishing")
+		return
 
 func _spawn_bobber(bobber_position: Vector2) -> void:
 	var location: Location = Utils.get_current_location()

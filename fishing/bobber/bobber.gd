@@ -16,6 +16,7 @@ enum Animations {
 @onready var sprite: AnimatedSprite2D = %Sprite
 
 func _ready() -> void:
+	add_to_group("bobber")
 	play_animation(Animations.FLOAT)
 
 func play_animation(animation: Animations) -> void:

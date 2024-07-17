@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cby5pq5kf2xpj"]
+[gd_scene load_steps=16 format=3 uid="uid://cby5pq5kf2xpj"]
 
 [ext_resource type="Script" path="res://scripts/state_machine/state_machine.gd" id="1_3oc2c"]
 [ext_resource type="Script" path="res://character/player/player.gd" id="1_t6k0w"]
@@ -10,7 +10,9 @@
 [ext_resource type="Script" path="res://character/player/states/throw_charge.gd" id="8_5ct1l"]
 [ext_resource type="PackedScene" uid="uid://db5pvdqvfp7oc" path="res://ui/scenes/rod_throw_bar.tscn" id="8_dyw67"]
 [ext_resource type="Script" path="res://character/player/states/throw.gd" id="9_fknwx"]
+[ext_resource type="Script" path="res://character/player/states/fishing.gd" id="10_kdpvy"]
 [ext_resource type="PackedScene" uid="uid://cb1yauuhqb58l" path="res://ui/scenes/bobber_indicator.tscn" id="11_gkj32"]
+[ext_resource type="Script" path="res://character/player/states/retract.gd" id="11_lpf2p"]
 [ext_resource type="PackedScene" uid="uid://b0ral1whl2itc" path="res://fishing/line/fishing_line.tscn" id="12_imwjy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3nkgp"]
@@ -56,6 +58,14 @@ player = NodePath("../..")
 
 [node name="Throw" type="Node" parent="FSM" node_paths=PackedStringArray("player")]
 script = ExtResource("9_fknwx")
+player = NodePath("../..")
+
+[node name="Fishing" type="Node" parent="FSM" node_paths=PackedStringArray("player")]
+script = ExtResource("10_kdpvy")
+player = NodePath("../..")
+
+[node name="Retract" type="Node" parent="FSM" node_paths=PackedStringArray("player")]
+script = ExtResource("11_lpf2p")
 player = NodePath("../..")
 
 [node name="RodThrowBar" parent="." instance=ExtResource("8_dyw67")]

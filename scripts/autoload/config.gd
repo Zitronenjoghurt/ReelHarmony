@@ -6,3 +6,9 @@ extends Node
 # The index of the frame when the rod throw animation will pause 
 # so it stops when the player is charging the throw
 @export var ROD_THROW_ANIMATION_STOP_FRAME_INDEX: int = 1
+
+# The index of the last frame in the rod throw animation
+@export var ROD_THROW_ANIMATION_END_FRAME_INDEX: int = 6
+
+# The index of the last frame in the rod catch animation
+@export var ROD_CATCH_ANIMATION_END_FRAME_INDEX: int = 4
