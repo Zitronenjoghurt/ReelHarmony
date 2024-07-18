@@ -13,10 +13,7 @@
 [ext_resource type="Script" path="res://scripts/state_machine/state_machine.gd" id="11_aligy"]
 [ext_resource type="Script" path="res://fishing/shadow/states/appear.gd" id="12_uddnb"]
 [ext_resource type="Script" path="res://fishing/shadow/states/roam.gd" id="13_cloci"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qtn3u"]
-radius = 4.0
-height = 14.0
+[ext_resource type="Script" path="res://fishing/shadow/states/disappear.gd" id="14_xugoi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ejhp2"]
 atlas = ExtResource("2_rlpt8")
@@ -1027,14 +1024,12 @@ script = ExtResource("1_rjy3k")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
-shape = SubResource("CapsuleShape2D_qtn3u")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(0.5, 2.08165e-12)
 sprite_frames = SubResource("SpriteFrames_xrwot")
-animation = &"big_disappear"
+animation = &"big_swim_N"
 
 [node name="FSM" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("11_aligy")
@@ -1047,3 +1042,18 @@ fish = NodePath("../..")
 [node name="Roam" type="Node" parent="FSM" node_paths=PackedStringArray("fish")]
 script = ExtResource("13_cloci")
 fish = NodePath("../..")
+
+[node name="Disappear" type="Node" parent="FSM" node_paths=PackedStringArray("fish")]
+script = ExtResource("14_xugoi")
+fish = NodePath("../..")
+
+[node name="TouchArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 7
+collision_mask = 7
+
+[node name="TouchCollision" type="CollisionShape2D" parent="TouchArea"]
+unique_name_in_owner = true
+
+[connection signal="area_entered" from="TouchArea" to="." method="_on_touch_area_area_entered"]
+[connection signal="area_exited" from="TouchArea" to="." method="_on_touch_area_area_exited"]

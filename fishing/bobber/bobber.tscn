@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bk11ss0ddq88n"]
+[gd_scene load_steps=33 format=3 uid="uid://bk11ss0ddq88n"]
 
 [ext_resource type="Script" path="res://fishing/bobber/bobber.gd" id="1_e4q2c"]
 [ext_resource type="Texture2D" uid="uid://cd7wf3551sh8" path="res://assets/fishing/bobber_bite/bobber_green_fish_bitting_animation.png" id="2_hlhdg"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cwfwde8ghe47m" path="res://assets/fishing/bobber_float/bobber_green_floating_animation.png" id="5_xxum4"]
 [ext_resource type="Texture2D" uid="uid://q6qfpo47x0b4" path="res://assets/fishing/bobber_float/bobber_red_floating_animation.png" id="6_gkhxf"]
 [ext_resource type="Texture2D" uid="uid://bfonoivg1k5ah" path="res://assets/fishing/bobber_float/bobber_yellow_floating_animation.png" id="7_ij054"]
+[ext_resource type="Script" path="res://fishing/bobber/deter_area.gd" id="8_6363s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oe1t8"]
 atlas = ExtResource("2_hlhdg")
@@ -200,6 +201,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_8qcxs"]
 radius = 5.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_21pt6"]
+radius = 6.0
+
 [node name="Bobber" type="Area2D"]
 script = ExtResource("1_e4q2c")
 
@@ -210,3 +214,9 @@ animation = &"float_yellow"
 
 [node name="BiteCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_8qcxs")
+
+[node name="DeterArea" type="Area2D" parent="."]
+script = ExtResource("8_6363s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeterArea"]
+shape = SubResource("CircleShape2D_21pt6")

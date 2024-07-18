@@ -26,6 +26,7 @@ script = ExtResource("7_myif0")
 name = ""
 size_category = 2
 size_multiplier = 1.0
+sense_radius = 5.0
 
 [node name="DemoLocation" type="Node2D" node_paths=PackedStringArray("tile_map")]
 script = ExtResource("1_qbwtt")
@@ -49,5 +50,5 @@ position = Vector2(384, 204)
 config = SubResource("Resource_2wh5m")
 
 [node name="FishShadow" parent="." instance=ExtResource("6_6qgbe")]
-position = Vector2(62, 252)
+position = Vector2(140, 238)
 fish_data = SubResource("Resource_yqpg7")
