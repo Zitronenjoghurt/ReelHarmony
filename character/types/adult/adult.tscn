@@ -21,3 +21,4 @@ script = ExtResource("2_wmrqf")
 position = Vector2(0, -2)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_k4mae")
+debug_color = Color(0, 0.6, 0.7, 0.42)

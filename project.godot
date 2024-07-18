@@ -59,6 +59,7 @@ gdscript/warnings/deprecated_keyword=2
 gdscript/warnings/confusable_identifier=2
 gdscript/warnings/confusable_local_declaration=2
 gdscript/warnings/confusable_local_usage=2
+shapes/collision/shape_color=Color(0.996078, 0, 0.211765, 0.619608)
 
 [display]
 
@@ -109,6 +110,7 @@ Throw_Rod={
 
 2d_physics/layer_1="Regular Collision"
 2d_physics/layer_2="Water"
+2d_physics/layer_3="Fish"
 
 [rendering]
 
